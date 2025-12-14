@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voľby 2025 | Overenie Identity</title>
+    <style>
+        /* CSS Style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #004d99;
+            margin-bottom: 5px;
+            font-size: 2em;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            font-weight: normal;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            text-align: left;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-group input[type="text"], 
+        .input-group input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        
+        /* Štýl pre primárnu metódu (Mobilná aplikácia) */
+        .primary-method {
+            background-color: #e6ffec; /* Svetlozelené pre hlavnú voľbu */
+            border-color: #28a745;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .button-primary {
+            background-color: #28a745; 
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .button-primary:hover {
+            background-color: #1e7e34;
+        }
+
+        .divider {
+            margin: 20px 0;
+            color: #aaa;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .small-info {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 10px;
+            display: block;
+            text-align: left;
+        }
+        
+        .warning-anonymity {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>🗳️ Autentifikácia voliča</h1>
+        <h2>Zvoľte metódu overenia Vašej identity pre prístup k hlasovaniu:</h2>
+
+        <form action="2-candidates.html" method="get">
+            
+            <div class="input-group primary-method">
+                <label for="securityCode">Metóda A: Kód z mobilnej aplikácie eID</label>
+                <input type="text" id="securityCode" name="securityCode" placeholder="Zadajte jednorazový D-kód z aplikácie" required>
+                <span class="small-info">
+                    Odporúčané. Najbezpečnejší a najjednoduchší spôsob overenia s dvojfaktorovou autentifikáciou.
+                </span>
+            </div>
+
+            <div class="divider">alebo</div>
+            
+            <div class="input-group">
+                <label for="idNumber">Metóda B: Manuálne overenie údajov</label>
+                
+                <input type="text" id="idNumber" name="idNumber" placeholder="Číslo občianskeho preukazu (9 znakov)" required>
+                <span class="small-info">Zadajte číslo OP bez medzier.</span>
+
+                <input type="date" id="dob" name="dob" style="margin-top: 10px;" required>
+                <span class="small-info">Dátum narodenia (Pre overenie v centrálnom registri voličov).</span>
+                
+                <p class="small-info" style="margin-top: 15px; color: #cc0000; font-weight: bold;">
+                    Pre zabezpečenie anonymity **NEVYŽADUJEME** Vaše meno a priezvisko.
+                </p>
+            </div>
+            
+            <button type="submit" class="button-primary">
+                Overiť údaje a vstúpiť do hlasovania
+            </button>
+        </form>
+        
+        <a href="0-prehlad.html" class="small-info" style="text-align: center; display: block; margin-top: 20px; color: #007bff; text-decoration: none;">
+            ← Späť na informačný portál
+        </a>
+    </div>
+
+</body>
+</html>

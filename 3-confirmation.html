@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voľby 2025 | Kontrola hlasu</title>
+    <style>
+        /* CSS Style - Zachovanie konzistencie */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .confirmation-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff9900; /* Oranžová pre zvýraznenie DÔLEŽITÉHO kroku */
+            margin-bottom: 5px;
+            font-size: 2.2em;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            font-weight: normal;
+        }
+
+        .summary-box {
+            border: 2px solid #ff9900;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background-color: #fffaf0; /* Svetlooranžové pozadie */
+        }
+        
+        .summary-box p {
+            font-size: 1.1em;
+            color: #333;
+            margin: 5px 0;
+        }
+
+        .summary-box strong {
+            display: block;
+            font-size: 1.5em;
+            color: #004d99;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .warning {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 25px 0;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* Štýly pre tlačidlá */
+        .button-group {
+            margin-top: 35px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .button-confirm {
+            background-color: #dc3545; /* Červená farba pre finálne Potvrdenie (kvôli dôležitosti) */
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            flex-grow: 1;
+            transition: background-color 0.3s;
+        }
+
+        .button-confirm:hover {
+            background-color: #c82333;
+        }
+        
+        .button-back {
+            background-color: #6c757d; /* Šedá farba pre návrat */
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            flex-grow: 1;
+            transition: background-color 0.3s;
+        }
+
+        .button-back:hover {
+            background-color: #5a6268;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="confirmation-container">
+        <h1>Kontrola hlasu</h1>
+        <h2>Prosím, pozorne skontrolujte Váš výber pred odoslaním.</h2>
+
+        <div class="summary-box">
+            <p>Váš zvolený kandidát (strana):</p>
+            <strong>Strana Zmien</strong> 
+            <p>Líder: Ján Novák</p>
+        </div>
+
+        <div class="warning">
+            ❗ **POZOR!** Kliknutím na "Potvrdiť a odoslať hlas" bude Váš hlas zašifrovaný a **NEDÁ SA ZMENIŤ**. Týmto sa proces hlasovania ukončí.
+        </div>
+        
+        <div class="button-group">
+            <button type="button" onclick="window.location.href='4-success.html';" class="button-confirm">
+                Potvrdiť a odoslať hlas
+            </button>
+            <button type="button" onclick="window.location.href='2-candidates.html';" class="button-back">
+                Späť na výber (Zmeniť hlas)
+            </button>
+        </div>
+        
+        <small style="display: block; margin-top: 20px; color: #777;">
+            Váš hlas bude spracovaný kryptograficky s cieľom zabezpečiť anonymitu [cite: 19] a ochranu pred manipuláciou[cite: 20].
+        </small>
+    </div>
+
+</body>
+</html>

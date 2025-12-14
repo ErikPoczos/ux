@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Voľby 2025 | Hlasovanie</title>
+    <style>
+        /* CSS Style - Kopíruje základný štýl z prvej stránky pre konzistenciu */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .voting-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px; /* Širší kontajner pre zoznam kandidátov */
+        }
+
+        h1 {
+            color: #004d99;
+            margin-bottom: 5px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        /* Štýl pre každého kandidáta v zozname */
+        .candidate-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .candidate-item:hover {
+            background-color: #e9f7ff; /* Svetlomodrý hover efekt */
+            border-color: #007bff;
+        }
+
+        .candidate-item input[type="radio"] {
+            margin-right: 20px;
+            transform: scale(1.5); /* Zväčšenie rádio tlačidla */
+        }
+
+        .candidate-info {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .candidate-info strong {
+            display: block;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .candidate-info span {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        /* Štýly pre tlačidlá */
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .button-primary {
+            background-color: #28a745; /* Zelená farba pre hlavnú akciu (Potvrdenie) */
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            flex-grow: 1;
+            transition: background-color 0.3s;
+        }
+
+        .button-primary:hover {
+            background-color: #1e7e34;
+        }
+        
+        .button-secondary {
+            background-color: #6c757d; /* Šedá farba pre vedľajšiu akciu (Návrat) */
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            flex-grow: 1;
+            transition: background-color 0.3s;
+        }
+
+        .button-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="voting-container">
+        <h1>Voľby do Národnej rady 2025</h1>
+        <h2>Vyberte jedného kandidáta (stranu) a stlačte "Skontrolovať môj hlas".</h2>
+
+        <form action="3-confirmation.html" method="get">
+            <p style="text-align: left; margin-bottom: 25px; color: #cc0000; font-weight: bold;">
+                ⚠️ Upozornenie: Hlasovanie je anonymné. Váš výber nie je prepojený s vašou identitou.
+            </p>
+
+            <div class="candidate-list">
+                <label class="candidate-item">
+                    <input type="radio" name="candidate" value="c01" required>
+                    <div class="candidate-info">
+                        <strong>1. Strana Zmien</strong>
+                        <span>Líder: Ján Novák | Program: Digitálna transformácia</span>
+                    </div>
+                </label>
+
+                <label class="candidate-item">
+                    <input type="radio" name="candidate" value="c02">
+                    <div class="candidate-info">
+                        <strong>2. Národná Stabilita</strong>
+                        <span>Líder: Anna Veselá | Program: Ochrana tradičných hodnôt</span>
+                    </div>
+                </label>
+
+                <label class="candidate-item">
+                    <input type="radio" name="candidate" value="c03">
+                    <div class="candidate-info">
+                        <strong>3. Ekologický Pokrok</strong>
+                        <span>Líder: Peter Zelený | Program: Zelená ekonomika a udržateľnosť</span>
+                    </div>
+                </label>
+
+                <label class="candidate-item" style="border-style: dashed; background-color: #fff9e6;">
+                    <input type="radio" name="candidate" value="none">
+                    <div class="candidate-info">
+                        <strong>Nevolím žiadneho kandidáta / Odovzdávam prázdny hlas</strong>
+                        <span>Váš hlas bude započítaný ako neplatný/prázdny.</span>
+                    </div>
+                </label>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="button-primary">
+                    Skontrolovať môj hlas
+                </button>
+                <a href="1-login.html" class="button-secondary" style="text-decoration: none; text-align: center;">
+                    Späť na prihlásenie (Zrušiť hlas)
+                </a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
