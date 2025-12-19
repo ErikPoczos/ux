@@ -2,126 +2,26 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-Voľby 2025 | Hlas Odoslaný</title>
+    <title>e-Voľby SR | Hotovo</title>
     <style>
-        /* CSS Style - Zachovanie konzistencie */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .success-container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 550px;
-            text-align: center;
-        }
-
-        .icon-check {
-            font-size: 5em;
-            color: #28a745; /* Zelená farba úspechu */
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        h1 {
-            color: #28a745;
-            margin-bottom: 5px;
-            font-size: 2.5em;
-        }
-
-        h2 {
-            color: #555;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-            font-weight: normal;
-        }
-
-        .code-box {
-            border: 2px dashed #007bff; /* Modrý ohraničenie pre dôležitosť */
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            background-color: #e9f7ff;
-        }
-        
-        .code-box p {
-            font-size: 1em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .code-box strong {
-            display: block;
-            font-size: 1.8em;
-            color: #004d99;
-            font-weight: bold;
-            letter-spacing: 2px; /* Zvýraznenie kódu */
-        }
-
-        .button-end {
-            background-color: #007bff; 
-            color: white;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: bold;
-            width: 100%;
-            margin-top: 25px;
-            transition: background-color 0.3s;
-        }
-
-        .button-end:hover {
-            background-color: #0056b3;
-        }
-
-        .info-small {
-            margin-top: 30px;
-            color: #777;
-            font-size: 0.9em;
-            text-align: left;
-        }
-
+        body { font-family: Arial; background: #f0f2f5; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .box { background: white; padding: 40px; border-radius: 10px; width: 500px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .check { font-size: 50px; color: #28a745; }
+        .blockchain-code { background: #e9ecef; padding: 15px; font-family: monospace; margin: 20px 0; border-radius: 5px; word-break: break-all; }
+        .btn-home { background: #003366; color: white; padding: 12px 25px; border: none; border-radius: 4px; text-decoration: none; display: inline-block; }
     </style>
 </head>
 <body>
-
-    <div class="success-container">
-        <span class="icon-check">✓</span>
-        <h1>Váš hlas bol úspešne odoslaný!</h1>
-        <h2>Ďakujeme Vám za účasť v elektronických voľbách.</h2>
-
-        <div class="code-box">
-            <p>Váš jedinečný a anonymný kód hlasu:</p>
-            <strong>9B2D-E8F3-A1C5-F7H6</strong>
+    <div class="box">
+        <div class="check">✔</div>
+        <h2>Váš hlas bol úspešne zapísaný</h2>
+        <p>Hlas bol anonymizovaný a uložený do distribuovanej databázy (Blockchain).</p>
+        <div class="blockchain-code">
+            HASH: 8e84a7b5a123f456b789c012d345e678f901234a
         </div>
-
-        <div class="info-small">
-            <p>
-                **Kontrolný kód:** Tento kód potvrdzuje, že Váš zašifrovaný hlas bol zaznamenaný do volebného systému. 
-                Môžete ho použiť na verejnom kontrolnom portáli (simulácia blockchain) na **overenie, že Váš hlas je medzi spracovanými hlasmi**, ale bez možnosti identifikácie.
-            </p>
-            <p>
-                **Anonymita:** Proces bol navrhnutý tak, aby **Vaša identita nebola prepojená s Vaším hlasom**[cite: 19]. 
-            </p>
-        </div>
-        
-        <button type="button" onclick="window.location.href='1-login.html';" class="button-end">
-            Ukončiť reláciu
-        </button>
+        <p style="font-size: 0.8em; color: #666;">Tento kód si uložte pre neskoršie overenie započítania vášho hlasu.</p>
+        <br>
+        <a href="0-prehlad.html" class="btn-home">NÁVRAT NA PORTÁL</a>
     </div>
-
 </body>
 </html>

@@ -2,161 +2,46 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-Voľby 2025 | Overenie Identity</title>
+    <title>e-Voľby SR | Prihlásenie</title>
     <style>
-        /* CSS Style */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .login-container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 450px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #004d99;
-            margin-bottom: 5px;
-            font-size: 2em;
-        }
-
-        h2 {
-            color: #555;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-            font-weight: normal;
-        }
-
-        .input-group {
-            margin-bottom: 25px;
-            text-align: left;
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .input-group input[type="text"], 
-        .input-group input[type="date"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 1em;
-        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .login-box { background: white; padding: 45px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 420px; text-align: center; }
+        .logo-slovakia { height: 60px; margin-bottom: 20px; }
+        h1 { color: #003366; font-size: 1.6em; margin-bottom: 10px; }
+        p { color: #666; font-size: 0.9em; margin-bottom: 30px; }
         
-        /* Štýl pre primárnu metódu (Mobilná aplikácia) */
-        .primary-method {
-            background-color: #e6ffec; /* Svetlozelené pre hlavnú voľbu */
-            border-color: #28a745;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
+        .auth-card { border: 2px solid #003366; background: #f8fbff; padding: 25px; border-radius: 8px; text-align: left; }
+        label { display: block; margin-bottom: 12px; font-weight: bold; font-size: 0.85em; color: #003366; text-transform: uppercase; letter-spacing: 0.5px; }
+        input { width: 100%; padding: 15px; margin-bottom: 10px; border: 1px solid #b3c6d9; border-radius: 4px; box-sizing: border-box; font-size: 1.2em; text-align: center; letter-spacing: 5px; }
         
-        .button-primary {
-            background-color: #28a745; 
-            color: white;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: bold;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
-
-        .button-primary:hover {
-            background-color: #1e7e34;
-        }
-
-        .divider {
-            margin: 20px 0;
-            color: #aaa;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+        .btn-login { background: #003366; color: white; padding: 16px; border: none; width: 100%; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 1em; transition: background 0.3s; margin-top: 20px; }
+        .btn-login:hover { background: #002244; }
         
-        .small-info {
-            font-size: 0.9em;
-            color: #777;
-            margin-top: 10px;
-            display: block;
-            text-align: left;
-        }
-        
-        .warning-anonymity {
-            background-color: #f8d7da;
-            color: #721c24;
-            padding: 10px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            font-size: 0.9em;
-        }
-
+        .footer-note { margin-top: 25px; font-size: 0.85em; color: #777; line-height: 1.4; }
+        .help-link { color: #003366; text-decoration: underline; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-
-    <div class="login-container">
-        <h1>🗳️ Autentifikácia voliča</h1>
-        <h2>Zvoľte metódu overenia Vašej identity pre prístup k hlasovaniu:</h2>
-
-        <form action="2-candidates.html" method="get">
-            
-            <div class="input-group primary-method">
-                <label for="securityCode">Metóda A: Kód z mobilnej aplikácie eID</label>
-                <input type="text" id="securityCode" name="securityCode" placeholder="Zadajte jednorazový D-kód z aplikácie" required>
-                <span class="small-info">
-                    Odporúčané. Najbezpečnejší a najjednoduchší spôsob overenia s dvojfaktorovou autentifikáciou.
-                </span>
-            </div>
-
-            <div class="divider">alebo</div>
-            
-            <div class="input-group">
-                <label for="idNumber">Metóda B: Manuálne overenie údajov</label>
-                
-                <input type="text" id="idNumber" name="idNumber" placeholder="Číslo občianskeho preukazu (9 znakov)" required>
-                <span class="small-info">Zadajte číslo OP bez medzier.</span>
-
-                <input type="date" id="dob" name="dob" style="margin-top: 10px;" required>
-                <span class="small-info">Dátum narodenia (Pre overenie v centrálnom registri voličov).</span>
-                
-                <p class="small-info" style="margin-top: 15px; color: #cc0000; font-weight: bold;">
-                    Pre zabezpečenie anonymity **NEVYŽADUJEME** Vaše meno a priezvisko.
-                </p>
-            </div>
-            
-            <button type="submit" class="button-primary">
-                Overiť údaje a vstúpiť do hlasovania
-            </button>
-        </form>
+    <div class="login-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Coat_of_arms_of_Slovakia.svg" alt="Štátny znak SR" class="logo-slovakia">
         
-        <a href="0-prehlad.html" class="small-info" style="text-align: center; display: block; margin-top: 20px; color: #007bff; text-decoration: none;">
-            ← Späť na informačný portál
-        </a>
-    </div>
+        <h1>Overenie identity</h1>
+        <p>Zadajte overovací kód z vašej aplikácie <strong>Slovensko v mobile</strong>.</p>
+        
+        <form action="2-candidates.html">
+            <div class="auth-card">
+                <label for="eid_code">Mobilný eID klient (D-Kód)</label>
+                <input type="text" id="eid_code" placeholder="000000" maxlength="6" pattern="\d{6}" required autofocus>
+                <small style="color: #666; font-size: 0.75em; display: block; text-align: center;">Kód je platný 2 minúty</small>
+            </div>
 
+            <button type="submit" class="btn-login">VSTÚPIŤ DO MIESTNOSTI</button>
+        </form>
+
+        <div class="footer-note">
+            Máte problémy s prihlásením? <br>
+            Pozrite si <a href="ako-to-funguje.html" class="help-link">návod na použitie eID</a>.
+        </div>
+    </div>
 </body>
 </html>

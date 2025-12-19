@@ -2,244 +2,137 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-Voľby 2025 | Informačný portál</title>
+    <title>e-Voľby SR | Portál</title>
     <style>
-        /* Základné štýly */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
-            margin: 0;
-            padding-top: 70px; /* Priestor pre fixné menu */
-        }
+        /* CSS Štýly */
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f0f2f5; padding-top: 80px; }
         
-        /* Menu (Navigácia) */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #004d99; /* Tmavomodrá farba SR */
-            color: white;
-            padding: 10px 40px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-sizing: border-box;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
+        .navbar { 
+            background: #003366; 
+            color: white; 
+            padding: 0 50px; 
+            height: 60px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            box-sizing: border-box; 
+            z-index: 1000; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-        }
+        .logo { display: flex; align-items: center; font-weight: bold; }
+        .logo img { height: 35px; margin-right: 12px; background: white; padding: 2px; border-radius: 3px; }
 
-        .logo-section img {
-            height: 40px; /* Simulácia loga SR */
-            width: auto;
-            margin-right: 15px;
-            border-radius: 4px;
-        }
-
-        .menu-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            padding: 5px 0;
+        .nav-links a { 
+            color: white; 
+            text-decoration: none; 
+            margin-left: 25px; 
+            font-size: 0.9em; 
+            font-weight: 500;
             transition: color 0.3s;
-            font-weight: bold;
         }
+        .nav-links a:hover { color: #ffcc00; }
 
-        .menu-links a:hover {
-            color: #ffcc00; /* Žltý hover efekt */
-        }
-
-        /* Sekcie obsahu */
-        .content-section {
-            padding: 60px 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-bottom: 1px solid #ddd;
-        }
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
         
-        .content-section h2 {
-            color: #004d99;
-            border-bottom: 2px solid #ffcc00;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-
-        /* DOMOV sekcia */
-        #domov .intro-box {
-            background-color: #e9f7ff;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        #domov .intro-box p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-        .button-primary {
-            background-color: #28a745;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-decoration: none; /* Pre anchor tag */
-            display: inline-block;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .button-primary:hover {
-            background-color: #1e7e34;
-        }
-
-        /* KANDIDÁTI sekcia */
-        .candidate-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .candidate-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        .candidate-card strong {
-            display: block;
-            font-size: 1.3em;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .candidate-card span {
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        /* VYHĽADÁVACIE OKNO sekcia */
-        #vyhladavanie .search-box {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        #vyhladavanie input[type="text"] {
-            flex-grow: 1;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1em;
-        }
-
-        #vyhladavanie button {
-            background-color: #ff9900;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
+        section { background: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         
-        .search-result {
-            border: 1px solid #ffcc00;
-            padding: 15px;
-            background-color: #fffaf0;
-            border-radius: 6px;
+        h2 { color: #003366; border-left: 5px solid #bf0000; padding-left: 15px; margin-top: 0; }
+        
+        .btn-start { 
+            background: #bf0000; 
+            color: white; 
+            padding: 15px 30px; 
+            border: none; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            text-decoration: none; 
+            display: inline-block; 
+            transition: background 0.3s;
         }
-        .search-result p {
-             margin: 0;
+        .btn-start:hover { background: #8e0000; }
+
+        .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+        
+        .card { 
+            border: 1px solid #ddd; 
+            padding: 20px; 
+            border-radius: 8px; 
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #fff;
         }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .search-input { width: 70%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 1em; }
+        .btn-search { padding: 12px 25px; background: #003366; color: white; border: none; border-radius: 4px; cursor: pointer; }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo-section">
-            <img src="slovak_logo_placeholder.png" alt="Logo Slovenskej Republiky" style="background-color: white;">
-            <span>e-Voľby 2025</span>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Coat_of_arms_of_Slovakia.svg" alt="Logo SR">
+            Portál e-Volieb SR
         </div>
-        <div class="menu-links">
-            <a href="#domov">Domov</a>
-            <a href="#kandidati">Kandidáti</a>
-            <a href="#vyhladavanie">Vyhľadávanie</a>
+        <div class="nav-links">
+            <a href="#domov">DOMOV</a>
+            <a href="ako-to-funguje.html">AKO TO FUNGUJE?</a>
+            <a href="#kandidati">KANDIDÁTI</a>
+            <a href="#vyhladavanie">VYHĽADÁVANIE</a>
         </div>
     </nav>
 
-    <section id="domov" class="content-section">
-        <h2>Úvod do Elektronických volieb</h2>
-        
-        <div class="intro-box">
-            <p>
-                Vitajte na oficiálnom portáli pre **Elektronické voľby 2025**[cite: 2].
-                Elektronické voľby predstavujú moderný, bezpečný a efektívny spôsob,
-                ako odovzdať svoj hlas[cite: 9]. Cieľom je zvýšiť dostupnosť volieb,
-                najmä pre občanov v zahraničí alebo pre osoby s obmedzenou mobilitou[cite: 38, 39].
-                Náš systém je postavený na moderných technológiách zabezpečenia,
-                ktoré garantujú anonymitu a ochranu pred manipuláciou[cite: 19, 20].
-            </p>
+    <div class="container">
+        <section id="domov">
+            <h2>Čo sú to e-voľby?</h2>
+            <p>Elektronické voľby umožňujú občanom SR bezpečne odovzdať hlas z pohodlia domova. Systém využíva kryptografiu a blockchain na zabezpečenie anonymity a nemennosti výsledkov.</p>
             
-            <a href="1-login.html" class="button-primary">
-                ➡️ Zúčastniť sa e-volieb (Autentifikácia)
-            </a>
-        </div>
-        
-    </section>
-
-    <section id="kandidati" class="content-section">
-        <h2>Zoznam kandidátov a strán</h2>
-        
-        <div class="candidate-grid">
-            <div class="candidate-card">
-                <strong>1. Strana Zmien</strong>
-                <span>Líder: Ján Novák | Program: Digitálna transformácia</span>
+            <div style="margin-top: 25px;">
+                <a href="1-login.html" class="btn-start">ZÚČASTNIŤ SA E-VOLIEB</a>
+                <a href="ako-to-funguje.html" style="margin-left: 20px; color: #003366; font-weight: bold; text-decoration: underline;">Prečítať si viac o bezpečnosti</a>
             </div>
-            <div class="candidate-card">
-                <strong>2. Národná Stabilita</strong>
-                <span>Líder: Anna Veselá | Program: Ochrana tradičných hodnôt</span>
-            </div>
-            <div class="candidate-card">
-                <strong>3. Ekologický Pokrok</strong>
-                <span>Líder: Peter Zelený | Program: Zelená ekonomika</span>
-            </div>
-            <div class="candidate-card">
-                <strong>4. Priama Akcia</strong>
-                <span>Líder: Martina Hromová | Program: Referendum a priama demokracia</span>
-            </div>
-        </div>
+        </section>
 
-    </section>
+        <section id="kandidati">
+            <h2>Zoznam kandidátov</h2>
+            <div class="card-grid">
+                <a href="detail-kandidata.html" style="text-decoration: none; color: inherit;">
+                    <div class="card">
+                        <strong>1. Strana Budúcnosti</strong><br>
+                        <small>Líder: Mgr. Ján Progres</small>
+                        <p style="color: #003366; font-size: 0.8em; margin-top: 15px; font-weight: bold;">Zobraziť detail →</p>
+                    </div>
+                </a>
 
-    <section id="vyhladavanie" class="content-section">
-        <h2>Vyhľadávanie informácií o kandidátoch</h2>
-        
-        <p>Pre získanie detailných informácií o programe alebo lídrovi strany zadajte názov alebo kľúčové slovo:</p>
-        
-        <div class="search-box">
-            <input type="text" placeholder="Napr. 'Ján Novák' alebo 'Ekologický Pokrok'">
-            <button>Hľadať</button>
-        </div>
-        
-        <div class="search-result">
-            <p><strong>Simulovaný výsledok hľadania pre "Ján Novák":</strong></p>
-            <p>Ján Novák je lídrom Strany Zmien. Jeho kľúčové programové body zahŕňajú implementáciu blockchain technológií do štátnej správy a zvýšenie kybernetickej bezpečnosti. Viac informácií nájdete na ich oficiálnej stránke (externý odkaz).</p>
-        </div>
+                <div class="card">
+                    <strong>2. Tradičná Únia</strong><br>
+                    <small>Líder: Ing. Anna Stará</small>
+                    <p style="color: #999; font-size: 0.8em; margin-top: 15px;">Detail nedostupný</p>
+                </div>
 
-    </section>
+                <a href="detail-kandidata.html" style="text-decoration: none; color: inherit;">
+                    <div class="card" style="border-color: #003366; background: #f0f7ff;">
+                        <strong>3. Digitálne Slovensko</strong><br>
+                        <small>Líder: MUDr. Peter Kód</small>
+                        <p style="color: #003366; font-size: 0.8em; margin-top: 15px; font-weight: bold;">Zobraziť detail →</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="vyhladavanie">
+            <h2>Vyhľadávanie informácií</h2>
+            <p>Nájdite podrobnosti o volebných programoch a lídroch kandidujúcich subjektov.</p>
+            <div style="margin-top: 15px;">
+                <input type="text" class="search-input" placeholder="Zadajte meno kandidáta alebo názov strany...">
+                <button class="btn-search">Hľadať</button>
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>

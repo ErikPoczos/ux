@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>e-Voľby SR | Ako to funguje</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f7f6; padding-top: 80px; color: #333; }
+        .navbar { background: #003366; color: white; padding: 0 50px; height: 60px; display: flex; align-items: center; position: fixed; top: 0; width: 100%; box-sizing: border-box; z-index: 1000; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        
+        h1 { color: #003366; text-align: center; margin-bottom: 40px; }
+        .step { display: flex; align-items: flex-start; margin-bottom: 40px; }
+        .step-number { background: #bf0000; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; margin-right: 20px; }
+        .step-content h3 { margin: 0 0 10px 0; color: #003366; }
+        
+        .info-graphic { background: #e9f7ff; border: 1px dashed #007bff; padding: 20px; border-radius: 8px; margin: 30px 0; text-align: center; }
+        .back-btn { display: inline-block; margin-top: 20px; color: #003366; text-decoration: none; font-weight: bold; }
+        .btn-action { background: #003366; color: white; padding: 12px 25px; border-radius: 4px; text-decoration: none; font-weight: bold; display: block; text-align: center; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div style="font-weight: bold;">Informačný portál e-Volieb SR</div>
+    </nav>
+
+    <div class="container">
+        <h1>Ako prebieha elektronické hlasovanie?</h1>
+        
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Identifikácia voliča</h3>
+                <p>Pomocou vášho občianskeho preukazu (eID) alebo mobilnej aplikácie overíme, či máte právo voliť. Systém v tomto momente zaznamená, že ste vstúpili do volebnej miestnosti, aby nikto nemohol hlasovať dvakrát.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Anonymný výber</h3>
+                <p>Vstúpite do virtuálnej plenty, kde si vyberiete svojho kandidáta. Váš výber je v tomto momente <strong>oddelený od vašej identity</strong>. Systém nevie, kto ste, vie len, že ste oprávnený volič.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Šifrovanie hlasu</h3>
+                <p>Váš hlas je okamžite zašifrovaný pomocou silných kryptografických kľúčov. Nikto (ani správca systému) ho nemôže počas prenosu vidieť ani zmeniť.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3>Zápis do Blockchainu</h3>
+                <p>Zašifrovaný hlas je zapísaný do distribuovanej databázy (Blockchain). Po odoslaní získate unikátny kód, pomocou ktorého si môžete kedykoľvek overiť, či je váš hlas v poriadku započítaný.</p>
+            </div>
+        </div>
+
+        <div class="info-graphic">
+            <strong>Vaša bezpečnosť je naša priorita.</strong><br>
+            Tento proces zaručuje, že voľby sú tajné, nemenné a transparentné.
+        </div>
+
+        <a href="0-prehlad.html" class="back-btn">← Späť na hlavnú stránku</a>
+        <a href="1-login.html" class="btn-action">CHCEM ZAČAŤ HLASOVAŤ</a>
+    </div>
+    <br><br>
+</body>
+</html>
